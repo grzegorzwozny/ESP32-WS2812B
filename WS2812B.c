@@ -117,7 +117,6 @@ void ws2812b_clear(void)
 
 void ws2812b_show(void)
 {
-    vTaskDelay(pdMS_TO_TICKS(FRAME_DURATION_MS));
     // Flush RGB values to LEDs
     rmt_transmit(led_chan, simple_encoder, led_strip_pixels, sizeof(led_strip_pixels), &tx_config);
     rmt_tx_wait_all_done(led_chan, portMAX_DELAY);

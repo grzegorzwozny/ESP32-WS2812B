@@ -15,6 +15,10 @@
 // ***********************************************************************
 
 void app_main(void) {
+
+    // Initialize LEDs
+    ws2812b_init();
+
     // Create Task 1
     xTaskCreate(
         task1_function,      // Function for Task 1
@@ -44,9 +48,6 @@ void app_main(void) {
         1,                  // Priority of Task 3
         NULL                // Task handle for Task 3 (optional)
     );
-
-    // Initialize LEDs
-    ws2812b_init();
 }
 
 // ***********************************************************************
